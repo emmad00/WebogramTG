@@ -35,7 +35,7 @@
             </my-i18n-param>
           </span>
         </a>
-        <p class="tg_checkbox" ng-if="!revocable && !isChannel" ng-switch="isUser ? 'user' : (isSupergroup ? 'supergroup' : (isUsualGroup ? 'group' : 'default'))">
+        <p class="tg_checkbox" ng-if="!revocable && !isChannel && !isSavedMessages" ng-switch="isUser ? 'user' : (isSupergroup ? 'supergroup' : (isUsualGroup ? 'group' : 'default'))">
           <span ng-switch-when="supergroup" my-i18n="confirm_modal_delete_messages_for_everyone_chat"></span>
           <span ng-switch-when="group" my-i18n="confirm_modal_delete_messages_for_you_only_chat"></span>
           <span ng-switch-when="user" my-i18n="confirm_modal_delete_messages_for_you_only_pm"><my-i18n-param name="user"><strong my-peer-link="peerID"></strong></my-i18n-param></span>
@@ -86,6 +86,8 @@
       <div ng-switch-when="BOT_ACCESS_PHONE" my-i18n="confirm_modal_bot_access_phone"></div>
       <div ng-switch-when="BOT_ACCESS_GEO" my-i18n="confirm_modal_bot_access_geo"></div>
       <div ng-switch-when="BOT_ACCESS_GEO_INLINE" my-i18n="confirm_modal_bot_access_geo_inline"></div>
+      <div ng-switch-when="CONTENT_SETTINGS_SENSITIVE" my-i18n="confirm_modal_content_settings_sensitive_md"></div>
+
 
 
 
@@ -117,6 +119,7 @@
       <span ng-switch-when="SHARE_CONTACT_PEER" my-i18n="confirm_modal_share_contact_submit"></span>
       <span ng-switch-when="EXT_SHARE_PEER" my-i18n="confirm_modal_share_file_submit"></span>
       <span ng-switch-when="RESET_ACCOUNT" my-i18n="confirm_modal_reset_account_submit"></span>
+      <span ng-switch-when="CONTENT_SETTINGS_SENSITIVE" my-i18n="confirm_modal_content_settings_sensitive_submit"></span>
       <span ng-switch-default my-i18n="modal_ok"></span>
     </button>
   </div>
